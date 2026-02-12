@@ -45,3 +45,6 @@ node_modules
 .env.local
 .env
 .vercel
+*.json
+# OR specifically
+videograph-ai-5666b2db80fa.json
