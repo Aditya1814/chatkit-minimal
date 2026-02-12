@@ -1,24 +1,10 @@
-"use client";
+// app/page.js
+import ChatComponent from "../../components/chatcomponent";
 
-import { ChatKit, useChatKit } from "@openai/chatkit-react";
-
-export default function MyChat() {
-  const { control } = useChatKit({
-    api: {
-      async getClientSecret() {
-        const res = await fetch("/api/chatkit/session", {
-          method: "POST",
-        });
-
-        const { client_secret } = await res.json();
-        return client_secret;
-      },
-    },
-  });
-
+export default function Home() {
   return (
-    <div style={{ height: "600px", width: "350px" }}>
-      <ChatKit control={control} />
-    </div>
+    <main className="min-h-screen bg-gray-100">
+      <ChatComponent />
+    </main>
   );
 }
